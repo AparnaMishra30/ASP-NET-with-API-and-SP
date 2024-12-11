@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="Training_webApp.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <%--   <link href="../Content/assets/Tablesearch/jquery.dataTables.css" rel="stylesheet" />
+    <script src="Content/assets/Tablesearch/jquery-1.7.1.min.js"></script>
+    <script src="Content/assets/Tablesearch/jquery.dataTables.min.js"></script>--%>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+
+
+     <style>
+         .card{
+               font-size:x-large;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            margin-left: 14rem;
+         }
+            .container{
+                font-size:x-large;
+               position:relative;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Light shadow for effect */
+            background-color: #f9f9f9;
+            padding:10px;
+            }
+            .h
+            {
+                 margin-inline-start:40%;
+            }
+            #lnlLogOut
+            {
+               margin-left:90%;
+            }
+            .logo{
+                width:auto;
+                height:200px;
+                margin-top:6px;
+            }
+            .sidenav {
+          height: 100%;
+          width: auto;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #f9f9f9;
+          overflow-x: hidden;
+          position:absolute;
+          top: auto;
+         /* padding-top: 50px;*/
+         /* margin-top:120px;*/
+        }
+
+        .sidenav a {
+          padding: 6px 8px 6px 16px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+        }
+
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <asp:ScriptManager ID="scriptmanager1" AsyncPostBackTimeout="300" runat="server" EnablePartialRendering="false"></asp:ScriptManager>
+          <div class="container">
+              <div class="h"> <span>WELCOME TO ADMIN PANEL -</span></div>
+                  
+       <%--     <asp:Label ID="lbluser"  Text="" Font-Bold="true" Style= margin-left: 15px;" runat="server" /> --%>
+       <div class="row"> <asp:Label ID="lbluser" Text="" Font-Bold="true" runat="server" Style="font-size: 18px;"  ></asp:Label></div>
+
+         
+        <div class="row">
+   <div class="col-sm-8"><asp:Label ID="lblDesgDesc" Text="" Font-Bold="true" runat="server" Style="font-size: 18px;"/></div>
+ <div class="col-sm-4"> <asp:LinkButton runat="server" ID="lnlLogOut" OnClick="lnlLogOut_Click" Style="font-size: 14px;" > Sign Out</asp:LinkButton></div>
+</div>
+ </div>
+        <div class="sidenav">
+          <div><img class="logo" alt="Logo" src="<%= ResolveUrl("~/images/student service.png")%>"/></div>
+          <%--  <div class ="menu"></div>
+  <a href="#about">About us</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact us</a>--%>
+        <div><asp:Menu ID="Menu1" runat="server" Orientation="Vertical"></asp:Menu></div>  
+
+            
+            </div>
+        <div class="card" style="margin: 30px 25px 2px 222px; ">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </div>
+    </form>
+    
+</body>
+</html>
